@@ -1,0 +1,24 @@
+<ion-view view-title="{{conf.conf.location.human}}">
+  <ion-content class="padding">
+
+  	<div class="item item-text-wrap">
+		<h2>{{conf.conf.location.name}}</h2>
+	</div>
+
+	<div class="item item-image">
+		<img ng-src="http://microservicesday.com/images/venue/1.jpg">
+	</div>
+
+	<div class="item item-text-wrap">
+		<p>{{conf.conf.location.address}}</p>
+	</div>
+
+	<div class="item map-item">
+		<ui-gmap-google-map center='map.center' zoom='map.zoom'>
+			<ui-gmap-marker idKey="'locationMarker'" coords="{latitude: conf.conf.location.lat, longitude: conf.conf.location.lng}">
+			</ui-gmap-marker>
+		</ui-gmap-google-map>
+	</div>
+
+  </ion-content>
+</ion-view>

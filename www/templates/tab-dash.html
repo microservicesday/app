@@ -1,0 +1,24 @@
+<ion-view view-title="Microservices Day">
+  <ion-content class="padding">
+
+  	<div id="day-callout" class="custom-font">
+  		<h1>{{conf.conf.location.human}}</h1>
+  		<h2>{{conf.conf.date}}</h2>
+  	</div>
+
+    <ion-list>
+      <ion-item
+        class="item-remove-animate item-avatar item-icon-right"
+        ng-repeat="item in agenda"
+        type="item-text-wrap"
+        ui-sref="tab.dashDetail({ sessionId: $index })">
+      	<img ng-if="item.type === 'talk'" ng-src="http://microservicesday.com/{{item.presenters[0].image}}">
+      	<img ng-if="item.type !== 'talk'" ng-src="img/default-avatar.png">
+        <h2>{{item.title}}</h2>
+        <p>{{item.time.start}} to {{item.time.end}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

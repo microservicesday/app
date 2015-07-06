@@ -1,0 +1,27 @@
+<ion-view view-title="{{conf.conf.location.human}}">
+  <ion-content class="padding">
+
+	<div class="item item-text-wrap">
+		<h2>{{session.title}}</h2>
+		<p>{{session.time.start}} to {{session.time.end}}</p>
+	</div>
+
+	<div ng-repeat="presenter in session.presenters" ng-if="session.type === 'talk' || session.type == 'panel'">
+		<div class="item item-image">
+			<img ng-src="http://microservicesday.com/{{presenter.image}}">
+		</div>
+
+		<div class="item item-text-wrap">
+			<h2>{{presenter.name}}</h2>
+			<p>{{presenter.title}} @ {{presenter.organisation}}</p>
+			<span ng-if="presenter.twitter" class="social"><i class="ion-social-twitter"></i> @{{presenter.twitter}}</span>
+			<span ng-if="presenter.github" class="social"><i class="ion-social-github"></i> @{{presenter.github}}</span>
+		</div>
+
+		<div class="item item-text-wrap">
+			<p>{{presenter.blurb}}</p>
+		</div>
+	</div>
+
+  </ion-content>
+</ion-view>
