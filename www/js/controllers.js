@@ -1,16 +1,16 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, agenda, conf, Agenda, Conf, $cordovaSplashscreen) {
+.controller('DashCtrl', function($scope, agenda, conf, Agenda, Conf, $cordovaSplashscreen, $ionicPlatform) {
 
-  $cordovaSplashscreen.hide();
+  try {
+    $cordovaSplashscreen.hide();
+  } catch(e) {}
 
   $scope.agenda = agenda.data;
   Agenda.set($scope.agenda);
 
   $scope.conf = conf.data;
   Conf.set($scope.conf);
-
-  // moment(new Date()).isBetween('Sun Jul 5 2015 18:30:00 GMT+0100 (BST)', 'Sun Jul 5 2015 19:00:00 GMT+0100 (BST)');
 
 })
 
