@@ -7,7 +7,7 @@ angular.module('starter.services', [])
   return {
 
     get: function() {
-      return $http.get('http://crossorigin.me/http://microservicesday.com/data/agenda.json');
+      return $http.get('https://msday-api.herokuapp.com/http://microservicesday.com/data/agenda.json');
     },
     set: function(agenda) {
       AGENDA = agenda;
@@ -26,7 +26,7 @@ angular.module('starter.services', [])
   return {
 
     get: function() {
-      return $http.get('http://crossorigin.me/http://microservicesday.com/data/metadata.json');
+      return $http.get('https://msday-api.herokuapp.com/http://microservicesday.com/data/metadata.json');
     },
     set: function(conf) {
       CONF = conf;
